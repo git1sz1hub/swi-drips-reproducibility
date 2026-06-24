@@ -20,11 +20,11 @@ scatter3(paraMat(1, :), paraMat(2, :), paraMat(3, :), ...
     120, logErr, 'filled', 'Marker', 'o', 'MarkerEdgeColor', 'k', ...
     'LineWidth', 0.8, 'MarkerFaceAlpha', 0.85);
 
-xlabel('Flux rate [kg/s]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
+xlabel('Freshwater flux [m$^3$/day]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
     'FontWeight', 'bold', 'Interpreter', 'latex');
-ylabel('Porosity [-]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
+ylabel('Mean porosity [-]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
     'FontWeight', 'bold', 'Interpreter', 'latex');
-zlabel('$\log_{10}$ Permeability [-]', 'FontName', 'Times New Roman', ...
+zlabel('Mean log-permeability [-]', 'FontName', 'Times New Roman', ...
     'FontSize', 24, 'FontWeight', 'bold', 'Interpreter', 'latex');
 
 grid off;
@@ -37,8 +37,8 @@ set(ax, 'Box', 'on', 'LineWidth', 1.2, 'TickDir', 'out', ...
 cmin = -6;
 cmax = -1;
 cb = colorbar('Location', 'eastoutside');
-cb.Label.String = 'log_{10}(err)';
-cb.Label.Interpreter = 'tex';
+cb.Label.Interpreter = 'latex';
+cb.Label.String = '$\log_{10}({\rm err})$';
 cb.Label.FontName = 'Times New Roman';
 cb.Label.FontSize = 24;
 cb.Label.FontWeight = 'bold';
@@ -83,11 +83,11 @@ lgd = legend([hStable, hBlowup], {'\ Stable cases (colored)', '\ Blow-up cases'}
     'Box', 'off', 'Position', [0.60, 0.75, 0.1, 0.1]);
 lgd.AutoUpdate = 'off';
 
-xlabel('Flux rate [kg/s]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
+xlabel('Freshwater flux [m$^3$/day]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
     'FontWeight', 'bold', 'Interpreter', 'latex');
-ylabel('Porosity [-]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
+ylabel('Mean porosity [-]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
     'FontWeight', 'bold', 'Interpreter', 'latex');
-zlabel('$\log_{10}$ Permeability [-]', 'FontName', 'Times New Roman', ...
+zlabel('Mean log-permeability [-]', 'FontName', 'Times New Roman', ...
     'FontSize', 24, 'FontWeight', 'bold', 'Interpreter', 'latex');
 
 grid off;
@@ -99,10 +99,10 @@ set(ax, 'Box', 'on', 'LineWidth', 1.5, 'TickDir', 'out', ...
 colormap(parula);
 clim([cmin cmax]);
 cb = colorbar('Location', 'eastoutside');
-cb.Label.String = 'log_{10}(err)';
+cb.Label.Interpreter = 'latex';
+cb.Label.String = '$\log_{10}({\rm err})$';
 cb.Label.FontName = 'Times New Roman';
 cb.Label.FontSize = 24;
-cb.Label.Interpreter = 'tex';
 cb.Label.FontWeight = 'bold';
 cb.Label.Rotation = 270;
 cb.Label.VerticalAlignment = 'bottom';

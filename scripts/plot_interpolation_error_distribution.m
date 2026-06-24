@@ -9,12 +9,12 @@ scatter3(S.Mtest(1, :), S.Mtest(2, :), S.Mtest(3, :), ...
     120, S.errPDE, 'filled', 'Marker', 'o', 'MarkerEdgeColor', 'k', ...
     'LineWidth', 0.8, 'MarkerFaceAlpha', 0.8);
 
-xlabel('Flux Rate [kg/s]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
-    'FontWeight', 'bold');
-ylabel('Porosity [-]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
-    'FontWeight', 'bold');
-zlabel('log_{10} Permeability [-]', 'FontName', 'Times New Roman', ...
-    'FontSize', 24, 'FontWeight', 'bold');
+xlabel('Freshwater flux [m$^3$/day]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
+    'FontWeight', 'bold', 'Interpreter', 'latex');
+ylabel('Mean porosity [-]', 'FontName', 'Times New Roman', 'FontSize', 24, ...
+    'FontWeight', 'bold', 'Interpreter', 'latex');
+zlabel('Mean log-permeability [-]', 'FontName', 'Times New Roman', ...
+    'FontSize', 24, 'FontWeight', 'bold', 'Interpreter', 'latex');
 
 grid on;
 set(gca, 'GridAlpha', 0.3, 'GridLineStyle', '-', 'GridColor', [0.5 0.5 0.5]);
@@ -22,9 +22,10 @@ set(gca, 'FontName', 'Times New Roman', 'FontSize', 24, 'Box', 'on', ...
     'LineWidth', 1.2, 'TickDir', 'out', 'TickLength', [0.01 0.01]);
 
 cb = colorbar('Location', 'eastoutside');
-cb.Label.String = 'Relative RMSE [-]';
+cb.Label.Interpreter = 'latex';
+cb.Label.String = 'err [-]';
 cb.Label.FontName = 'Times New Roman';
-cb.Label.FontSize = 14;
+cb.Label.FontSize = 24;
 cb.Label.FontWeight = 'bold';
 cb.Label.Rotation = 270;
 cb.Label.VerticalAlignment = 'bottom';

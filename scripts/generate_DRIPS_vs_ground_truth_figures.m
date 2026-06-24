@@ -152,7 +152,7 @@ for k = 1:nCases
     yticks(0:0.2:0.8);
 end
 xlabel('Time (months)', 'FontSize', 28, 'FontName', 'Times New Roman', 'Interpreter', 'latex');
-ylabel('Toe location (\%)', 'FontSize', 28, 'FontName', 'Times New Roman', 'Interpreter', 'latex');
+ylabel('Toe location [-]', 'FontSize', 28, 'FontName', 'Times New Roman', 'Interpreter', 'latex');
 set(gca, 'FontSize', 24, 'LineWidth', 2, 'FontName', 'Times New Roman', 'Box', 'on');
 labelsTruth = cellfun(@(s) ['\ Truth, ' s], caseNames, 'UniformOutput', false);
 labelsDrips = cellfun(@(s) ['\ Prediction, ' s], caseNames, 'UniformOutput', false);
@@ -180,7 +180,7 @@ for k = 1:numel(swiTruthAll)
     yticks(0:0.1:0.3);
 end
 xlabel('Time (months)', 'FontSize', 28, 'FontName', 'Times New Roman', 'Interpreter', 'latex');
-ylabel('SWI ratio (\%)', 'FontSize', 28, 'FontName', 'Times New Roman', 'Interpreter', 'latex');
+ylabel('SWI ratio [-]', 'FontSize', 28, 'FontName', 'Times New Roman', 'Interpreter', 'latex');
 set(gca, 'FontSize', 24, 'LineWidth', 2, 'FontName', 'Times New Roman', 'Box', 'on');
 legend off;
 exportgraphics(fig, fullfile(cfg.figureDir, 'DRIPS_swi_ratio_all_cases.pdf'), ...
